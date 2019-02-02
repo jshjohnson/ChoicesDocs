@@ -1,8 +1,9 @@
-module.exports = ({ app, logger, promisify, routes }) => {
+module.exports = ({ app, express, path, logger, promisify, routes }) => {
   let server;
 
   return {
-    start() {
+    start: () => {
+      app.use(express.static(path.resolve(__dirname, '../dist')));
       app.get('/version', routes.version);
       app.use('**', routes.default);
 
@@ -10,7 +11,7 @@ module.exports = ({ app, logger, promisify, routes }) => {
         logger.info('Listening on port 3000');
       });
     },
-    async stop() {
+    stop: async () => {
       try {
         logger.info('Attempting to shut down server');
         const closeServer = promisify(server.close);
