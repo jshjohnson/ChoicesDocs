@@ -1,7 +1,7 @@
-module.exports = ({ React }) => {
+export default function({ React }) {
   function App() {
-    return <h1>Yolo</h1>;
+    return <h1>Hello world</h1>;
   }
 
   return App;
-};
+}

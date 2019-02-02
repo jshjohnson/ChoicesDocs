@@ -1,10 +1,4 @@
-module.exports = ({
-  packageJson,
-  template,
-  React,
-  ReactDOMServer,
-  App,
-}) => {
+export default function({ packageJson, template, React, ReactDOMServer, App }) {
   return {
     version: (req, res) =>
       res.json({
@@ -19,4 +13,4 @@ module.exports = ({
       res.end(dom);
     },
   };
-};
+}

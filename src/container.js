@@ -1,7 +1,7 @@
-const { createContainer, asFunction, asValue } = require('awilix');
-const React = require('react');
+import { createContainer, asFunction, asValue } from 'awilix';
+import React from 'react';
 
-const App = require('./components/App');
+import App from './components/App';
 
 const container = createContainer();
 
@@ -13,4 +13,4 @@ container.register({
   App: asFunction(App),
 });
 
-module.exports = container;
+export default container;

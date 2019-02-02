@@ -1,16 +1,15 @@
-const { createContainer, asFunction, asValue } = require('awilix');
-const pino = require('pino');
-const express = require('express');
-const React = require('react');
-const ReactDOMServer = require('react-dom/server');
-const { promisify } = require('util');
-const path = require('path');
+import { asFunction, asValue } from 'awilix';
+import pino from 'pino';
+import express from 'express';
+import ReactDOMServer from 'react-dom/server';
+import { promisify } from 'util';
+import path from 'path';
 
-const parentContainer = require('../container');
-const packageJson = require('../../package.json');
-const server = require('./server');
-const routes = require('./routes');
-const template = require('./templates/index.html');
+import parentContainer from '../container';
+import packageJson from '../../package.json';
+import server from './server';
+import routes from './routes';
+import template from './templates/index.html';
 
 const container = parentContainer.createScope();
 
@@ -30,4 +29,4 @@ container.register({
   template: asValue(template),
 });
 
-module.exports = container.cradle;
+export default container.cradle;

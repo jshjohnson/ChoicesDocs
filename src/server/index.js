@@ -1,5 +1,8 @@
+import dependencies from './container';
+
+const { server, logger } = dependencies;
+
 require('@babel/polyfill');
-const { logger, server } = require('./container');
 
 process.on('SIGTERM', server.stop);
 process.on('SIGINT', server.stop);

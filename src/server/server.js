@@ -1,4 +1,4 @@
-module.exports = ({ app, express, logger, promisify, routes }) => {
+export default function({ app, express, logger, promisify, routes }) {
   let server;
 
   return {
@@ -22,4 +22,4 @@ module.exports = ({ app, express, logger, promisify, routes }) => {
       }
     },
   };
-};
+}

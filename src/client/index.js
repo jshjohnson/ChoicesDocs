@@ -1,6 +1,6 @@
-require('@babel/polyfill');
-
 import dependencies from './container';
+
+require('@babel/polyfill');
 
 const { React, ReactDOM, App } = dependencies;
 

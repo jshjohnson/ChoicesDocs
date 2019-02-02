@@ -9,6 +9,10 @@
     "react/jsx-filename-extension": [1, {
       "extensions": [".js", ".jsx"]
     }],
+    "import/prefer-default-export": false,
+    "import/no-extraneous-dependencies": ["error", {
+      "devDependencies": false
+    }],
     "prettier/prettier": ["error", {
       "singleQuote": true,
       "trailingComma": "all"
