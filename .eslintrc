@@ -10,9 +10,7 @@
       "extensions": [".js", ".jsx"]
     }],
     "import/prefer-default-export": false,
-    "import/no-extraneous-dependencies": ["error", {
-      "devDependencies": false
-    }],
+    "import/no-extraneous-dependencies": false,
     "prettier/prettier": ["error", {
       "singleQuote": true,
       "trailingComma": "all"

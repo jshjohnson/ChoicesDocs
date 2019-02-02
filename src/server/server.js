@@ -13,7 +13,11 @@ export default function({ app, express, logger, promisify, routes }) {
     },
     stop: async () => {
       try {
-        logger.info('Shuting down server');
+        if (!server) {
+          throw ReferenceError('No server to shut down');
+        }
+
+        logger.info('Shutting down server');
         const closeServer = promisify(server.close);
         await closeServer.call(server);
       } catch (err) {

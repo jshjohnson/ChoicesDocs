@@ -1,6 +1,6 @@
-export default function({ React }) {
+export default function({ React, Navigation }) {
   function App() {
-    return <h1>Hello world</h1>;
+    return <Navigation />;
   }
 
   return App;

@@ -1,11 +1,12 @@
 const path = require('path');
+// const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   // production || development
   mode: 'production',
 
   // Inform webpack that we're building a bundle
-  // for nodeJS, rather then for the browser
+  // for a browser, rather than node
   target: 'web',
 
   // Tell webpack the root file of our
@@ -27,7 +28,22 @@ module.exports = {
         loader: 'babel-loader',
         exclude: '/node_modules/',
         options: {
-          babelrc: true
+          babelrc: true,
+        },
+      },
+      {
+        test: /\.(css)$/,
+        include: path.join(__dirname, '..', 'src', 'client'),
+        loader: 'css-loader',
+      },
+      {
+        test: /\.(css)$/,
+        include: path.join(__dirname, '..', 'src', 'components'),
+        loader: 'css-loader',
+        options: {
+          modules: true,
+          camelCase: true,
+          localIdentName: '[name]__[local]___[hash:base64:5]',
         },
       },
     ],

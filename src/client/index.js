@@ -1,4 +1,5 @@
 import dependencies from './container';
+import './style.css';
 
 require('@babel/polyfill');
 

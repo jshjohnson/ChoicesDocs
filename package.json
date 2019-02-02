@@ -8,6 +8,9 @@
     "dev:build-server": "webpack --config ./config/webpack.server.js --watch",
     "dev:build-client": "webpack --config ./config/webpack.client.js --watch",
     "dev:server": "nodemon --watch dist --exec node ./dist/server.bundle.js",
+    "build": "npm-run-all --parallel build:*",
+    "build:server": "webpack --config ./config/webpack.server.js",
+    "build:client": "webpack --config ./config/webpack.client.js",
     "serve": "node ./dist/server.bundle.js"
   },
   "repository": {
@@ -34,6 +37,7 @@
     "@babel/preset-react": "^7.0.0",
     "@babel/register": "^7.0.0",
     "babel-loader": "^8.0.5",
+    "css-loader": "^2.1.0",
     "eslint": "^5.13.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^4.0.0",
@@ -42,9 +46,12 @@
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-react": "^7.12.4",
     "html-loader": "^0.5.5",
+    "mini-css-extract-plugin": "^0.5.0",
     "nodemon": "^1.18.9",
     "npm-run-all": "^4.1.5",
+    "postcss-loader": "^3.0.0",
     "prettier": "^1.16.3",
+    "style-loader": "^0.23.1",
     "webpack": "^4.29.0",
     "webpack-cli": "^3.2.1",
     "webpack-node-externals": "^1.7.2"
