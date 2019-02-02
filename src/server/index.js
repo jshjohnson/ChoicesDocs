@@ -1,4 +1,5 @@
 import dependencies from './container';
+import '../client/style.css';
 
 const { server, logger } = dependencies;
 

@@ -7,11 +7,11 @@
     "dev": "npm-run-all --parallel dev:*",
     "dev:build-server": "webpack --config ./config/webpack.server.js --watch",
     "dev:build-client": "webpack --config ./config/webpack.client.js --watch",
-    "dev:server": "nodemon --watch dist --exec node ./dist/server.bundle.js",
-    "build": "npm-run-all --parallel build:*",
-    "build:server": "webpack --config ./config/webpack.server.js",
-    "build:client": "webpack --config ./config/webpack.client.js",
-    "serve": "node ./dist/server.bundle.js"
+    "dev:serve": "nodemon --watch dist --exec node ./dist/server.bundle.js",
+    "prod": "npm-run-all --parallel prod:*",
+    "prod:build-server": "webpack --config ./config/webpack.server.js",
+    "prod:build-client": "webpack --config ./config/webpack.client.js",
+    "prod:serve": "node ./dist/server.bundle.js"
   },
   "repository": {
     "type": "git",
