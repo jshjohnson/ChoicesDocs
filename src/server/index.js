@@ -1,3 +1,4 @@
+require('@babel/polyfill');
 const { logger, server } = require('./container');
 
 process.on('SIGTERM', server.stop);
