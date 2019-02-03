@@ -11,7 +11,7 @@
     "prod": "npm-run-all --parallel prod:*",
     "prod:build-server": "webpack --config ./config/webpack.server.js",
     "prod:build-client": "webpack --config ./config/webpack.client.js",
-    "prod:serve": "node ./dist/server.bundle.js"
+    "prod:serve": "node server.bundle.js"
   },
   "repository": {
     "type": "git",

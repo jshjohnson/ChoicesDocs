@@ -7,7 +7,7 @@
 }
 
 .navigationItem {
-  padding-left: 3.5rem;
+  padding-left: 1.75rem;
 }
 
 .navigationItem:first-child {
@@ -21,4 +21,10 @@
 
 .navigationItem a:hover {
   border-bottom: 1px solid #FFFFFF;
+}
+
+@media only screen and (min-width: 60rem) {
+  .navigationItem {
+    padding-left: 3.5rem;
+  }  
 }

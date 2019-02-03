@@ -8,7 +8,9 @@ export default function({ React, PropTypes }) {
       <pre className={styles.codeContainer}>
         <code className={styles.code}>
           {commands.map(command => (
-            <span className={styles.command}>{`${command} `}</span>
+            <span key={command} className={styles.command}>
+              {`${command} `}
+            </span>
           ))}
         </code>
       </pre>

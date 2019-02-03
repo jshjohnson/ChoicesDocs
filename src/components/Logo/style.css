@@ -6,6 +6,12 @@
 }
 
 .logo {
-  max-width: 150px;
+  max-width: 8.5rem;
   height: auto;
+}
+
+@media only screen and (min-width: 60rem) {
+  .logo {
+    max-width: 12rem;
+  } 
 }
