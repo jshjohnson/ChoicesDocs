@@ -1,15 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-GB">
   <head>
     <meta charset="utf-8">
+    <meta name="theme-color" content="#1f1f1f">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
     <title>Choices.js</title>
-    <link rel="stylesheet" href="./static/main.css">
+    <meta name=description itemprop=description content="A lightweight, configurable select box/text input plugin. Similar to Select2 and Selectize but without the jQuery dependency.">
+    <link rel="stylesheet" href="./public/main.css">
+    <link rel="preload" href="https://fonts.gstatic.com/s/nunito/v9/XRXV3I6Li01BKofINeaBTMnFcQ.woff2" as="font" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
   </head>
 
   <body>
     <div id="root">
       {{ reactDom }}
     </div>
-    <script src="./static/client.bundle.js" type="text/javascript"></script>
+    <script src="./public/client.bundle.js" type="text/javascript"></script>
   </body>
 </html>
