@@ -1,8 +1,9 @@
-export default function({ app, express, logger, promisify, routes }) {
+export default function({ app, express, logger, promisify, routes, compression }) {
   let server;
 
   return {
     start: () => {
+      app.use(compression());
       app.use('/public', express.static('dist/public'));
       app.get('/version', routes.version);
       app.get('*', routes.default);

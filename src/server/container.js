@@ -5,6 +5,7 @@ import ReactDOMServer from 'react-dom/server';
 import { StaticRouter } from 'react-router';
 import { promisify } from 'util';
 import path from 'path';
+import compression from 'compression';
 
 import parentContainer from '../container';
 import packageJson from '../../package.json';
@@ -22,6 +23,7 @@ container.register({
   StaticRouter: asValue(StaticRouter),
   promisify: asValue(promisify),
   path: asValue(path),
+  compression: asValue(compression),
 });
 
 container.register({

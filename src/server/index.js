@@ -7,7 +7,7 @@ require('@babel/polyfill');
 
 process.on('SIGTERM', server.stop);
 process.on('SIGINT', server.stop);
-process.on('unhandledPromiseRejection', err => {
+process.on('unhandledRejection', err => {
   logger.fatal({ err }, 'Encountered unhandled error');
   process.exit(1);
 });
