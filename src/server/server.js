@@ -3,7 +3,7 @@ export default function({ app, express, logger, promisify, routes }) {
 
   return {
     start: () => {
-      app.use('/static', express.static('dist/public'));
+      app.use('/public', express.static('dist/public'));
       app.get('/version', routes.version);
       app.get('*', routes.default);
 
