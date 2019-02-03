@@ -1,4 +1,11 @@
-export default function({ app, express, logger, promisify, routes, compression }) {
+export default function({
+  app,
+  express,
+  logger,
+  promisify,
+  routes,
+  compression,
+}) {
   let server;
 
   return {
@@ -6,6 +13,7 @@ export default function({ app, express, logger, promisify, routes, compression }
       app.use(compression());
       app.use('/public', express.static('dist/public'));
       app.get('/version', routes.version);
+      app.get('/robots.txt', routes.robots);
       app.get('*', routes.default);
 
       server = app.listen(3000, () => {

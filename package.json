@@ -8,7 +8,7 @@
     "dev:build-server": "webpack --config ./config/webpack.server.js --watch",
     "dev:build-client": "webpack --config ./config/webpack.client.js --watch",
     "dev:serve": "nodemon --watch src --watch dist --exec node ./dist/server.bundle.js",
-    "prod": "npm run prod:build-server && npm run prod:build-client && npm run prod:serve",
+    "prod": "npm-run-all -s prod:*",
     "prod:build-server": "webpack --config ./config/webpack.server.prod.js",
     "prod:build-client": "webpack --config ./config/webpack.client.prod.js",
     "prod:serve": "node dist/server.bundle.js"

@@ -1,9 +1,20 @@
-export default function({ packageJson, template, React, ReactDOMServer, StaticRouter, App }) {
+export default function({
+  packageJson,
+  template,
+  React,
+  ReactDOMServer,
+  StaticRouter,
+  App,
+}) {
   return {
     version: (req, res) =>
       res.json({
         version: packageJson.version,
       }),
+    robots: (req, res) => {
+      res.type('text/plain');
+      res.send('User-agent: *\nDisallow: ');
+    },
     default: (req, res) => {
       const context = {};
       const jsx = (
