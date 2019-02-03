@@ -1,10 +1,12 @@
 const path = require('path');
+const TerserPlugin = require('terser-webpack-plugin');
 const webpackNodeExternals = require('webpack-node-externals');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = {
   // production || development
-  mode: 'production',
+  mode: process.env.ENVIRONMENT === 'production' ? 'production' : 'development',
 
   // Inform webpack that we're building a bundle
   // for nodeJS, rather than for the browser
@@ -72,6 +74,15 @@ module.exports = {
       filename: 'public/[name].css',
     }),
   ],
+
+  optimization: {
+    minimizer: [
+      new TerserPlugin({
+        sourceMap: process.env.ENVIRONMENT === 'production',
+      }),
+      new OptimizeCSSAssetsPlugin({})
+    ],
+  },
 
   // Tell webpack not to bundle any libraries that exist in the 'node_modules' folder
   // into the server bundle

@@ -1,9 +1,9 @@
 const path = require('path');
-// const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
   // production || development
-  mode: 'production',
+  mode: process.env.ENVIRONMENT === 'production' ? 'production' : 'development',
 
   // Inform webpack that we're building a bundle
   // for a browser, rather than node
@@ -58,6 +58,14 @@ module.exports = {
           },
         ],
       },
+    ],
+  },
+
+  optimization: {
+    minimizer: [
+      new TerserPlugin({
+        sourceMap: process.env.ENVIRONMENT === 'production',
+      }),
     ],
   },
 };
