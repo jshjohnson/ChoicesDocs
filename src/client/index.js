@@ -3,6 +3,11 @@ import './style.css';
 
 require('@babel/polyfill');
 
-const { React, ReactDOM, App } = dependencies;
+const { React, ReactDOM, BrowserRouter, App } = dependencies;
 
-ReactDOM.hydrate(<App />, document.querySelector('#root'));
+ReactDOM.hydrate(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
+  document.querySelector('#root')
+);

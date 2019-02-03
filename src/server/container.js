@@ -2,6 +2,7 @@ import { asFunction, asValue } from 'awilix';
 import pino from 'pino';
 import express from 'express';
 import ReactDOMServer from 'react-dom/server';
+import { StaticRouter } from 'react-router';
 import { promisify } from 'util';
 import path from 'path';
 
@@ -18,6 +19,7 @@ container.register({
   app: asFunction(express).singleton(),
   logger: asValue(pino()),
   ReactDOMServer: asValue(ReactDOMServer),
+  StaticRouter: asValue(StaticRouter),
   promisify: asValue(promisify),
   path: asValue(path),
 });
