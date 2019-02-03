@@ -18,7 +18,7 @@ module.exports = {
   output: {
     filename: 'client.bundle.js',
     path: path.resolve(__dirname, '..', 'dist', 'public'),
-    publicPath: '/dist/public',
+    publicPath: '/static',
   },
 
   module: {
@@ -32,6 +32,14 @@ module.exports = {
         },
       },
       {
+        test: /\.(svg)$/,
+        loader: 'file-loader',
+        options: {
+          name: '/[name].[ext]',
+          outputPath: '',
+        },
+      },
+      {
         test: /\.(css)$/,
         include: path.join(__dirname, '..', 'src', 'client'),
         loader: 'css-loader',
@@ -39,12 +47,16 @@ module.exports = {
       {
         test: /\.(css)$/,
         include: path.join(__dirname, '..', 'src', 'components'),
-        loader: 'css-loader',
-        options: {
-          modules: true,
-          camelCase: true,
-          localIdentName: '[name]__[local]___[hash:base64:5]',
-        },
+        use: [
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              camelCase: true,
+              localIdentName: '[name]__[local]___[hash:base64:5]',
+            },
+          },
+        ],
       },
     ],
   },

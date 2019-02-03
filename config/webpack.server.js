@@ -19,7 +19,7 @@ module.exports = {
   output: {
     filename: 'server.bundle.js',
     path: path.resolve(__dirname, '..', 'dist'),
-    publicPath: '/dist',
+    publicPath: '/',
   },
 
   module: {
@@ -35,6 +35,14 @@ module.exports = {
       {
         test: /\.(html)$/,
         loader: 'html-loader',
+      },
+      {
+        test: /\.(svg)$/,
+        loader: 'file-loader',
+        options: {
+          name: '/[name].[ext]',
+          outputPath: 'public',
+        },
       },
       {
         test: /\.(css)$/,
