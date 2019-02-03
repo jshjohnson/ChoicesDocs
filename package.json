@@ -4,14 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "ENVIRONMENT=development npm-run-all -p dev:*",
+    "dev": "npm-run-all -p dev:*",
     "dev:build-server": "webpack --config ./config/webpack.server.js --watch",
     "dev:build-client": "webpack --config ./config/webpack.client.js --watch",
     "dev:serve": "nodemon --watch src --watch dist --exec node ./dist/server.bundle.js",
-    "prod": "ENVIRONMENT=production npm-run-all --parallel prod:*",
-    "prod:build-server": "webpack --config ./config/webpack.server.js",
-    "prod:build-client": "webpack --config ./config/webpack.client.js",
-    "prod:serve": "node server.bundle.js"
+    "prod": "npm run prod:build-server && npm run prod:build-client && npm run prod:serve",
+    "prod:build-server": "webpack --config ./config/webpack.server.prod.js",
+    "prod:build-client": "webpack --config ./config/webpack.client.prod.js",
+    "prod:serve": "node dist/server.bundle.js"
   },
   "repository": {
     "type": "git",
@@ -26,6 +26,7 @@
   "dependencies": {
     "@babel/polyfill": "^7.2.5",
     "awilix": "^4.2.0",
+    "compression": "^1.7.3",
     "express": "^4.16.4",
     "pino": "^5.11.1",
     "react": "^16.7.0",
@@ -59,6 +60,7 @@
     "style-loader": "^0.23.1",
     "webpack": "^4.29.0",
     "webpack-cli": "^3.2.1",
+    "webpack-merge": "^4.2.1",
     "webpack-node-externals": "^1.7.2"
   }
 }

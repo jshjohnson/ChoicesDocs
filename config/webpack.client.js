@@ -3,7 +3,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
   // production || development
-  mode: process.env.ENVIRONMENT === 'production' ? 'production' : 'development',
+  mode: 'development',
 
   // Inform webpack that we're building a bundle
   // for a browser, rather than node
@@ -18,7 +18,7 @@ module.exports = {
   output: {
     filename: 'client.bundle.js',
     path: path.resolve(__dirname, '..', 'dist', 'public'),
-    publicPath: '/static',
+    publicPath: '/public',
   },
 
   module: {
@@ -64,7 +64,7 @@ module.exports = {
   optimization: {
     minimizer: [
       new TerserPlugin({
-        sourceMap: process.env.ENVIRONMENT === 'production',
+        sourceMap: process.env.NODE_ENV === 'production',
       }),
     ],
   },

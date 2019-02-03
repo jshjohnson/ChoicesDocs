@@ -6,7 +6,7 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = {
   // production || development
-  mode: process.env.ENVIRONMENT === 'production' ? 'production' : 'development',
+  mode: 'development',
 
   // Inform webpack that we're building a bundle
   // for nodeJS, rather than for the browser
