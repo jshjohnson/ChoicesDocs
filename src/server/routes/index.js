@@ -5,17 +5,18 @@ export default function({ packageJson, template, React, ReactDOMServer, StaticRo
         version: packageJson.version,
       }),
     default: (req, res) => {
-      const context = req.params.param ? req.params.param : null;
+      const context = {};
       const jsx = (
         <StaticRouter location={req.url} context={context}>
           <App />
         </StaticRouter>
       );
-      const reactDom = ReactDOMServer.renderToString(jsx);
-      const dom = template.replace('{{ reactDom }}', reactDom);
+      const html = ReactDOMServer.renderToString(jsx);
+      const parsedHTML = template.replace('{{ reactDom }}', html);
 
       res.writeHead(200, { 'Content-Type': 'text/html' });
-      res.end(dom);
+      res.write(parsedHTML);
+      res.end();
     },
   };
 }

@@ -67,7 +67,8 @@ html {
 body {
   background: #2a2a2a;
   color: #FFFFFF;
-  font-family: 'Nunito', sans-serif;
+	font-family: 'Nunito', sans-serif;
+	font-display: 'fallback';
 	font-size: 1.4rem;
 	line-height: 1.5;
 }
