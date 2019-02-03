@@ -52,6 +52,10 @@ table {
   Only global styles live here
 */
 
+*, *:before, *:after {
+	box-sizing: border-box
+}
+
 html {
 	/* This percentage allows us to use REM values that map to pixels (e.g. 1.6rem === 16px) */
 	font-size: 62.5%;
