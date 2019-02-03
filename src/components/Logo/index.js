@@ -5,7 +5,9 @@ export default function({ React }) {
   function Logo() {
     return (
       <div className={styles.logoContainer}>
-        <img className={styles.logo} src={logo} alt="Choices.js logo" />
+        <a href="/">
+          <img className={styles.logo} src={logo} alt="Choices.js logo" />
+        </a>
       </div>
     );
   }

@@ -8,6 +8,7 @@
 .logo {
   max-width: 8.5rem;
   height: auto;
+  display: block;
 }
 
 @media only screen and (min-width: 60rem) {

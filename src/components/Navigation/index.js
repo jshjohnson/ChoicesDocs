@@ -8,7 +8,7 @@ export default function({ React }) {
           <a href="/">Home</a>
         </li>
         <li className={styles.navigationItem}>
-          <a href="">Examples</a>
+          <a href="/examples">Examples</a>
         </li>
         <li className={styles.navigationItem}>
           <a href="https://github.com/jshjohnson/Choices">Repository</a>
