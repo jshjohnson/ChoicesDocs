@@ -1,24 +1,21 @@
 import styles from './style.css';
 
-export default function({ React, PropTypes }) {
-  function Code({ children }) {
-    const commands = children.split(' ');
-
+export default function({ React, PropTypes, Highlight }) {
+  function Code({ children, language }) {
     return (
-      <pre className={styles.codeContainer}>
-        <code className={styles.code}>
-          {commands.map(command => (
-            <span key={command} className={styles.command}>
-              {`${command} `}
-            </span>
-          ))}
-        </code>
-      </pre>
+      <div className={styles.codeContainer}>
+        <Highlight className={language}>{children}</Highlight>
+      </div>
     );
   }
 
   Code.propTypes = {
     children: PropTypes.string.isRequired,
+    language: PropTypes.string,
+  };
+
+  Code.defaultProps = {
+    language: 'javascript',
   };
 
   return Code;

@@ -6,7 +6,10 @@ export default function({ React, PropTypes }) {
   }
 
   LayoutContainer.propTypes = {
-    children: PropTypes.element.isRequired,
+    children: PropTypes.oneOfType([
+      PropTypes.arrayOf(PropTypes.node),
+      PropTypes.node,
+    ]).isRequired,
   };
 
   return LayoutContainer;

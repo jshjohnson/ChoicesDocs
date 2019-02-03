@@ -1,19 +1,23 @@
 .codeContainer {
   display: inline-block;
-  padding: 2rem 2.8rem;
-  border-radius: 0.25rem;
-  background-color: #1f1f1f;
+  max-width: 100%;
   color: #FFFFFF;
   font-size: 2rem;
   font-family: monospace;
   margin: 1rem 0;
+  border-radius: 0.25rem;
+  background-color: #1f1f1f;
 }
 
-.code:before {
-  content: '$';
-  padding-right: 0.5rem;
+.codeContainer pre,
+.codeContainer code {
+  background-color: #1f1f1f !important;
 }
 
-.command:first-child {
-  color: #4fcb6c;
+.codeContainer pre {
+  padding: 0;
+}
+
+.codeContainer code {
+  padding: 2rem 2.8rem;
 }
