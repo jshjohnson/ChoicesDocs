@@ -1,0 +1,19 @@
+.codeContainer {
+  display: inline-block;
+  padding: 2rem 2.8rem;
+  border-radius: 0.25rem;
+  background-color: #1f1f1f;
+  color: #FFFFFF;
+  font-size: 2rem;
+  font-family: monospace;
+  margin: 1rem 0;
+}
+
+.code:before {
+  content: '$';
+  padding-right: 0.5rem;
+}
+
+.command:first-child {
+  color: #4fcb6c;
+}

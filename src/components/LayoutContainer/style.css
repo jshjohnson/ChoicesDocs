@@ -1,0 +1,11 @@
+.layoutContainer {
+  max-width: 1200px;
+  padding: 0 2rem;
+  margin: auto;
+}
+
+@media only screen and (min-width: 60rem) {
+  .layoutContainer {
+    padding: 0 4rem;
+  }
+}

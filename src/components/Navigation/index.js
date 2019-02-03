@@ -1,20 +1,21 @@
 import styles from './style.css';
 
 export default function({ React }) {
-  function Navigation() {
+  function Header() {
     return (
-      <div className={styles.outerContainer}>
-        <div className={styles.innerContainer}>
-          <ul className={styles.navigationList}>
-            <li>Home</li>
-            <li>Installation</li>
-            <li>Usage</li>
-            <li>Repository</li>
-          </ul>
-        </div>
-      </div>
+      <ul className={styles.navigationList}>
+        <li className={styles.navigationItem}>
+          <a href="/">Home</a>
+        </li>
+        <li className={styles.navigationItem}>
+          <a href="">Examples</a>
+        </li>
+        <li className={styles.navigationItem}>
+          <a href="https://github.com/jshjohnson/Choices">Repository</a>
+        </li>
+      </ul>
     );
   }
 
-  return Navigation;
+  return Header;
 }

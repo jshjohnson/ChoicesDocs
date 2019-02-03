@@ -1,6 +1,6 @@
-export default function({ React, Navigation }) {
+export default function({ React, Layout }) {
   function App() {
-    return <Navigation />;
+    return <Layout />;
   }
 
   return App;

@@ -1,19 +1,24 @@
-.outerContainer {
-  position: fixed;
-  width: 100%;
-  left: 0;
-  bottom: 0;
-  background-color: rgba(0,0,0,0.25);
-}
-
-.innerContainer {
-  max-width: 600px;
-  margin: auto;
-}
-
 .navigationList {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   list-style: none;
+  align-self: center;
+}
+
+.navigationItem {
+  padding-left: 3.5rem;
+}
+
+.navigationItem:first-child {
+  padding-left: 0;
+}
+
+.navigationItem a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.navigationItem a:hover {
+  border-bottom: 1px solid #FFFFFF;
 }
