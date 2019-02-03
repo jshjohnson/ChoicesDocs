@@ -6,6 +6,7 @@ import Highlight from 'react-highlight';
 
 import HomePage from './pages/HomePage';
 import ErrorPage from './pages/ErrorPage';
+import ExamplesPage from './pages/ExamplesPage';
 
 import App from './components/App';
 import Header from './components/Header';
@@ -27,7 +28,8 @@ container.register({
 container.register({
   HomePage: asFunction(HomePage),
   ErrorPage: asFunction(ErrorPage),
-})
+  ExamplesPage: asFunction(ExamplesPage),
+});
 
 /* Components */
 container.register({
