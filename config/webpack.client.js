@@ -1,9 +1,21 @@
 const path = require('path');
-const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
   // production || development
   mode: 'development',
+
+  // Tweak what is outputted to console
+  stats: {
+    all: false,
+    modules: true,
+    maxModules: 5,
+    errors: true,
+    warnings: true,
+    moduleTrace: true,
+    errorDetails: true,
+    chunks: false,
+    version: true,
+  },
 
   // Inform webpack that we're building a bundle
   // for a browser, rather than node
@@ -60,23 +72,5 @@ module.exports = {
         ],
       },
     ],
-  },
-
-  optimization: {
-    minimizer: [
-      new TerserPlugin({
-        sourceMap: process.env.NODE_ENV === 'production',
-      }),
-    ],
-    splitChunks: {
-      cacheGroups: {
-        vendor: {
-          test: /node_modules/,
-          chunks: 'initial',
-          name: 'vendor',
-          enforce: true,
-        },
-      },
-    },
   },
 };
