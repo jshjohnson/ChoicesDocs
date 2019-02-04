@@ -5,13 +5,13 @@
   "main": "index.js",
   "scripts": {
     "dev": "npm-run-all -p dev:*",
-    "dev:build-server": "webpack --config ./config/webpack.server.js --watch",
-    "dev:build-client": "webpack --config ./config/webpack.client.js --watch",
-    "dev:serve": "nodemon --watch src --watch dist --exec node ./dist/server.bundle.js",
-    "prod": "npm-run-all -s prod:*",
-    "prod:build-server": "webpack --config ./config/webpack.server.prod.js",
-    "prod:build-client": "webpack --config ./config/webpack.client.prod.js",
-    "prod:serve": "node dist/server.bundle.js"
+    "dev:server": "webpack --config ./config/webpack.server.js --watch",
+    "dev:client": "webpack --config ./config/webpack.client.js --watch",
+    "dev:start": "nodemon --watch src --watch dist --exec node ./dist/server.bundle.js",
+    "build": "npm-run-all -s build:*",
+    "build:server": "webpack --config ./config/webpack.server.prod.js",
+    "build:client": "webpack --config ./config/webpack.client.prod.js",
+    "start": "node dist/server.bundle.js"
   },
   "repository": {
     "type": "git",
