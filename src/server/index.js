@@ -1,9 +1,10 @@
 import dependencies from './container';
 import '../client/style.css';
 
-const { server, logger } = dependencies;
-
+require('dotenv').config();
 require('@babel/polyfill');
+
+const { server, logger } = dependencies;
 
 process.on('SIGTERM', server.stop);
 process.on('SIGINT', server.stop);

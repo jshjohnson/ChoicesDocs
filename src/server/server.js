@@ -16,8 +16,8 @@ export default function({
       app.get('/robots.txt', routes.robots);
       app.get('*', routes.default);
 
-      server = app.listen(3000, () => {
-        logger.info('Listening on port 3000');
+      server = app.listen(process.env.PORT || 3000, () => {
+        logger.info(`Listening on port ${server.address().port}`);
       });
     },
     stop: async () => {
