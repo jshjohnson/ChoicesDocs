@@ -1,6 +1,4 @@
-import setupCode from './setupCode';
-
-export default function({ React, Header, ContentSection, Footer, Code }) {
+export default function({ React, Header, ContentSection, Footer }) {
   function ErrorPag() {
     return (
       <div>
