@@ -17,6 +17,7 @@ module.exports = {
   // that is generated
   output: {
     filename: 'client.bundle.js',
+    chunkFilename: '[name].bundle.js',
     path: path.resolve(__dirname, '..', 'dist', 'public'),
     publicPath: '/public',
   },
@@ -67,5 +68,15 @@ module.exports = {
         sourceMap: process.env.NODE_ENV === 'production',
       }),
     ],
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          test: /node_modules/,
+          chunks: 'initial',
+          name: 'vendor',
+          enforce: true,
+        },
+      },
+    },
   },
 };
