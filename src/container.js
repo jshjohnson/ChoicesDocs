@@ -2,7 +2,10 @@ import { createContainer, asFunction, asValue } from 'awilix';
 import React from 'react';
 import { Route, Switch } from 'react-router';
 import PropTypes from 'prop-types';
-import Highlight from 'react-highlight';
+import hljs from 'highlight.js/lib/highlight';
+import highlightLangJS from 'highlight.js/lib/languages/javascript';
+import highlightLangCSS from 'highlight.js/lib/languages/css';
+import highlightLangShell from 'highlight.js/lib/languages/shell';
 
 import HomePage from './pages/HomePage';
 import ErrorPage from './pages/ErrorPage';
@@ -22,6 +25,10 @@ const container = createContainer();
 container.register({
   React: asValue(React),
   PropTypes: asValue(PropTypes),
+  highlight: asValue(hljs),
+  highlightLangJS: asValue(highlightLangJS),
+  highlightLangCSS: asValue(highlightLangCSS),
+  highlightLangShell: asValue(highlightLangShell),
 });
 
 /* Pages */
@@ -33,7 +40,6 @@ container.register({
 
 /* Components */
 container.register({
-  Highlight: asValue(Highlight),
   Route: asValue(Route),
   Switch: asValue(Switch),
   App: asFunction(App),
